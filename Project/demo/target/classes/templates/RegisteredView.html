@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Students</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h2>Registered Students</h2>
+    <table>
+        <thead>
+            <tr>
+                <th> ID </th>
+                <th> Name </th>
+                <th> Address </th>
+                <th> Email </th>
+                <th> Course </th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${registered.empty}">
+                <td colspan="2"> No Students Registered Available </td>
+            </tr>
+            <tr th:each="register : ${registered}">
+                <td><span th:text="${register.register_id}"> ID </span></td>
+                <td><span th:text="${register.student_name}"> Name </span></td>
+                <td><span th:text="${register.student_address}"> Address </span></td>
+                <td><span th:text="${register.student_email}"> Email </span></td>
+                <td><span th:text="${register.course_name}"> Course </span></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
