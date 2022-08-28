@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Student Login</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Student Login Page</h1>
+    <form action="#" th:action="@{/register/add}" th:object="${register}" method="post">
+        <p>Email: <input type="text" th:field="*{student_email}" /></p>
+        <p>Password: <input type="text" th:field="*{student_password}" /></p>
+        <p><a href="StudentForm.html">
+            <button>Sign In</button>
+          </a><a href="RegisterForm.html">
+            <button>Sign up</button>
+          </a> </p>
+    </form>
+</body>
+</html>
