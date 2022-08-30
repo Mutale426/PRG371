@@ -29,7 +29,7 @@ public class SpringSecurityAdminConfig extends WebSecurityConfigurerAdapter {
 			.antMatcher("/admin/**")
 			.authorizeRequests().anyRequest().authenticated()
 			.and().formLogin().loginPage("/admin/login")
-				.defaultSuccessUrl("/admin/dashboard", true)
+				.defaultSuccessUrl("/students", true)
 				.failureUrl("/admin/accessdenied")
 			.permitAll()
 			.and().logout().logoutUrl("/admin/logout").logoutSuccessUrl("/admin/login")

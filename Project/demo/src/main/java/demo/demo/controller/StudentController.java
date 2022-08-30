@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
 
 import java.util.List;
 
@@ -44,8 +46,9 @@ public ResponseEntity<Student> saveStudent(@RequestBody Student student){
 
 	// build get all student REST API
 	@GetMapping
-	public List<Student> getAllStudent(){
-		return studentService.getAllStudent();
+	public String getAllStudent(Model model){
+    model.addAttribute("students", studentService.getAllStudent());
+    return "admin/AdminPage";
 	}
 
   // build get student by id REST API
@@ -55,14 +58,14 @@ public ResponseEntity<Student> saveStudent(@RequestBody Student student){
 	}
 
   // build update student REST API
-	@PutMapping("{id}")
+	@PutMapping("/edit/{id}")
 	public ResponseEntity<Student> updateStudent(@PathVariable("id") Integer id
 												  ,@RequestBody Student student){
 		return new ResponseEntity<Student>(studentService.updateStudent(student, id), HttpStatus.OK);
 	}
 	
 	// build delete student REST API
-	@DeleteMapping("{id}")
+	@RequestMapping("/delete/{id}")
 	public ResponseEntity<String> deleteStudent(@PathVariable("id") Integer id){
 		
 		// delete Student from DB
