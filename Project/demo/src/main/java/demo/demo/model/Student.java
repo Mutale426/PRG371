@@ -8,9 +8,13 @@ public class Student {
   @Id
   @GeneratedValue(strategy=GenerationType.AUTO)
   private Integer student_id;
+  @Column(name = "student_name")
   private String student_name;
-  private String student_address;
+  @Column(name = "student_address")
+  private String student_address; 
+  @Column(name = "student_email")
   private String student_email;
+  @Column(name = "student_password")
   private String student_password;
 
   public Integer getId() {

@@ -50,20 +50,20 @@ public ResponseEntity<Student> saveStudent(@RequestBody Student student){
 
   // build get student by id REST API
 	@GetMapping("{id}")
-	public ResponseEntity<Student> getStudentById(@PathVariable("id") long studentId){
+	public ResponseEntity<Student> getStudentById(@PathVariable("id") Integer studentId){
 		return new ResponseEntity<Student>(studentService.getStudentById(studentId), HttpStatus.OK);
 	}
 
   // build update student REST API
 	@PutMapping("{id}")
-	public ResponseEntity<Student> updateStudent(@PathVariable("id") long id
+	public ResponseEntity<Student> updateStudent(@PathVariable("id") Integer id
 												  ,@RequestBody Student student){
 		return new ResponseEntity<Student>(studentService.updateStudent(student, id), HttpStatus.OK);
 	}
 	
 	// build delete student REST API
 	@DeleteMapping("{id}")
-	public ResponseEntity<String> deleteStudent(@PathVariable("id") long id){
+	public ResponseEntity<String> deleteStudent(@PathVariable("id") Integer id){
 		
 		// delete Student from DB
 	 studentService.deleteStudent(id);

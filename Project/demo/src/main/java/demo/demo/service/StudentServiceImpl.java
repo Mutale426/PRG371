@@ -29,18 +29,18 @@ public class StudentServiceImpl implements StudentService {
 
 
     @Override
-    public Student getStudentById(long id) {
+    public Student getStudentById(Integer id) {
         
         return studentRepository.findById(id).orElseThrow(() -> 
-						new ResourceNotFoundException("Student", "Id", id));
+						new ResourceNotFoundException("Student", "student_id", id));
 
     }
 
     @Override
-    public Student updateStudent(Student student, long id) {
+    public Student updateStudent(Student student, Integer id) {
     // we need to check whether student with given id is exist in DB or not
 	Student existingStudent = studentRepository.findById(id).orElseThrow(
-    () -> new ResourceNotFoundException("Student", "Id", id)); 
+    () -> new ResourceNotFoundException("Student", "student_id", id)); 
     
     existingStudent.setName(student.getName());
     existingStudent.setAddress(student.getAddress());
@@ -52,14 +52,10 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public void deleteStudent(long id) {
+    public void deleteStudent(Integer id) {
      // check whether a student exist in a DB or not
 		studentRepository.findById(id).orElseThrow(() -> 
-        new ResourceNotFoundException("Student", "Id", id));
-        studentRepository.deleteById(id);
-        
-    }
-
-    
-    
+        new ResourceNotFoundException("Student", "student_id", id));
+        studentRepository.deleteById(id);   
+    } 
 }
