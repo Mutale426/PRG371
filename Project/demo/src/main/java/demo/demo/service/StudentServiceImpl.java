@@ -1,7 +1,7 @@
 package demo.demo.service;
 import demo.demo.model.Student;
 import demo.demo.repository.StudentRepository;
-import exception.ResourceNotFoundException;
+import demo.demo.exception.ResourceNotFoundException;
 
 import java.util.List;
 import org.springframework.stereotype.Service;
@@ -9,10 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class StudentServiceImpl implements StudentService {
 
-
     private StudentRepository studentRepository;
-
-
 
     public StudentServiceImpl(StudentRepository studentRepository) {
         super();

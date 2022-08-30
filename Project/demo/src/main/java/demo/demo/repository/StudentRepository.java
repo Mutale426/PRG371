@@ -1,5 +1,7 @@
 package demo.demo.repository;
 
+import java.util.Optional;
+
 import org.springframework.data.repository.CrudRepository;
 
 import demo.demo.model.Student;
@@ -8,5 +10,9 @@ import demo.demo.model.Student;
 // CRUD refers Create, Read, Update, Delete
 
 public interface StudentRepository extends CrudRepository<Student, Integer> {
+
+    Optional<Student> findById(long id);
+
+    void deleteById(long id);
 
 }
