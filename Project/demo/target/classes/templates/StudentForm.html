@@ -1,17 +1,32 @@
 <!DOCTYPE HTML>
-<html xmlns:th="https://www.thymeleaf.org">
-<head> 
-    <title>Students</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
+
 <body>
-	<h1>Students</h1>
-    <form action="#" th:action="@{/students/add}" th:object="${student}" method="post">
-    	<p>Name: <input type="text" th:field="*{student_name}" /></p>
-        <p>Address: <input type="text" th:field="*{student_address}" /></p>
-        <p>Email: <input type="text" th:field="*{student_email}" /></p>
-        <p>Password: <input type="text" th:field="*{student_password}" /></p>
-        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-    </form>
+    <div class="container">
+        <h1>Student Registeration</h1>
+        <hr>
+        <form action="#" th:action="@{/register/add}" th:object="${student}" method="POST">
+            <input type="text" th:field="*{name}" placeholder="Full Name" class="form-control mb-4 col-4">
+
+            <input type="text" th:field="*{address}" placeholder="Address" class="form-control mb-4 col-4">
+
+            <input type="text" th:field="*{email}" placeholder="Email" class="form-control mb-4 col-4">
+
+            <input type="text" th:field="*{password}" placeholder="Password" class="form-control mb-4 col-4">
+
+            <button type="submit" class="btn btn-info col-2">Register Student</button>
+        </form>
+
+        <hr>
+
+        <a th:href="@{/students}"> Back to Student List</a>
+    </div>
 </body>
 </html>

@@ -29,7 +29,7 @@ public class SpringSecurityUserConfig extends WebSecurityConfigurerAdapter {
 			.antMatcher("/**")
 			.authorizeRequests().anyRequest().authenticated()
 			.and().formLogin().loginPage("/login")
-				.defaultSuccessUrl("/dashboard", true)
+				.defaultSuccessUrl("/register", true)
 				.failureUrl("/accessdenied")
 			.permitAll()
 			.and().logout().logoutSuccessUrl("/login");

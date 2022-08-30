@@ -6,7 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping
-public class TestController {
+public class LoginController {
 
 	@RequestMapping("/")
 	public ModelAndView defaultHome() {
