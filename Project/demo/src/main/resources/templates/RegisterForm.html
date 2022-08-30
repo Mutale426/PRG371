@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>Registeration</h1>
-    <form action="#" th:action="@{/register/add}" th:object="${register}" method="post">
+    <form action="#" th:action="@{/register/add}" th:object="${Register}" method="post">
     	<p>Name: <input type="text" th:field="*{student_name}" /></p>
         <p>Address: <input type="text" th:field="*{student_address}" /></p>
         <p>Email: <input type="text" th:field="*{student_email}" /></p>

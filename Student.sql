@@ -56,4 +56,39 @@ VALUES('Gabriel','6474 Pine Street','example@domain.com','apple_bees','PRG 3x1')
 ('Gomez','6474 Pine Street','example3@domain.com','ice_cream','WPR 3x1'),
 ('Theo','6474 Pine Street','example4@domain.com','pop_tart','SEN 3x1');
 
+CREATE TABLE Users(
+user_id int primary key AUTO_INCREMENT,
+username varchar(50) unique not null,
+password varchar(50) not null,
+disabled boolean default false,
+account_expired boolean default false,
+account_locked boolean default false,
+credentials_expired boolean default false
+);
 
+INSERT INTO Users(username,password)
+VALUES ('example@domain.com','apple_bees'),
+('example2@domain.com','secure123'),
+('example3@domain.com','ice_cream'),
+('example4@domain.com','pop_tart'),
+('jake','password'),
+('mike','password'),
+('lopez','password'),
+('anthony','password');
+
+CREATE TABLE Role (
+role_id integer primary key AUTO_INCREMENT,
+role_name varchar(50)
+);
+
+INSERT INTO Role (role_name) values('ADMIN'),
+('User');
+
+CREATE TABLE User_Role (
+user_role_id integer primary key AUTO_INCREMENT,
+user_id integer references users(user_id),
+role_id integer references role(role_id)
+);
+
+INSERT INTO User_Role (user_id, role_id) values(1,2),
+(2,2), (3,2), (4,2), (5,1), (6,1), (7,1), (8,1);

@@ -30,9 +30,9 @@ public class RegisterController {
 
   @RolesAllowed({"USER","ADMIN"})
   @GetMapping(path="/add")
-  public @ResponseBody String RegisterForm(Model model) {
+  public String RegisterForm(Model model) {
     model.addAttribute("register", new Register());
-    return "Register";
+    return "RegisterForm";
   }
 
   @RolesAllowed("ADMIN")
