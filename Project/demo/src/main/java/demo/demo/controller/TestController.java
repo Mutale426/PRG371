@@ -25,26 +25,26 @@ public class TestController {
 
 	@RequestMapping("/accessdenied")
 	public ModelAndView userAccessError() {
-		return new ModelAndView("accessdenied");
+		return new ModelAndView("UserDenied");
 	}
 	
 	@RequestMapping("/admin/")
 	public ModelAndView admin() {
-		return new ModelAndView("admin/login");
+		return new ModelAndView("admin/AdminLogin");
 	}
 
 	@RequestMapping("/admin/login")
 	public ModelAndView adminlogin() {
-		return new ModelAndView("admin/login");
+		return new ModelAndView("admin/AdminLogin");
 	}
 
 	@RequestMapping("/admin/dashboard")
 	public ModelAndView admindashboard() {
-		return new ModelAndView("admin/dashboard");
+		return new ModelAndView("admin/AdminPage");
 	}
 
 	@RequestMapping("/admin/accessdenied")
 	public ModelAndView adminAccessError() {
-		return new ModelAndView("admin/accessdenied");
+		return new ModelAndView("admin/AdminDenied");
 	}
 }

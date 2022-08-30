@@ -5,15 +5,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-	<h1>Student Login Page</h1>
-    <form action="#" th:action="@{/register/add}" th:object="${register}" method="post">
-        <p>Email: <input type="text" th:field="*{student_email}" /></p>
-        <p>Password: <input type="text" th:field="*{student_password}" /></p>
-        <p><a href="StudentForm.html">
-            <button>Sign In</button>
-          </a><a href="RegisterForm.html">
-            <button>Sign up</button>
-          </a> </p>
+  <center>
+    <h1>Welcome to Spring Boot Security</h1>
+    
+    <form method="POST" action="/login">
+      User Name : <input type="text" name="username" value="user"/><br><br>
+      Password  : <input type="password" name="password" value="password"/><br><br>
+      <input type="submit" name="submit"/>
     </form>
+    </center>
 </body>
 </html>
